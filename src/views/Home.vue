@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <HelloWorld msg="This is an home page" />
-    <div ref="www">{{title}}</div>
+    <div ref="www">{{age}}</div>
     <button @click="handle">测试</button>
   </div>
 </template>
@@ -14,19 +14,12 @@ export default {
   name: 'home',
   data () {
     return {
-      route: this.$route,
       age: 27
     }
   },
-  created () {
-    console.log(this.$route)
-    console.log(this.$router)
-  },
   methods: {
     handle () {
-      this.title = '123'
-      console.log(this.title) // 123
-      console.log(this.$refs.www.innerHtml) // undefined
+      console.log(this.$refs.www.innerText)
     }
   },
   components: {
